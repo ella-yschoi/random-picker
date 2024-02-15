@@ -7,7 +7,7 @@ const SettingPage = () => {
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
       <ImageContainer>
-        <img src={LoadingImage} alt="celebrate.gif" />
+        <img src={LoadingImage} alt="celebrate.gif" height="200" width="300" />
       </ImageContainer>
       <WinnerContainer>엘라</WinnerContainer>
       <ButtonsContainer>
@@ -31,22 +31,23 @@ const Container = styled.div`
   min-height: 100vh;
   margin: 0;
   padding-top: 1rem;
+  font-family: 'Pretendard-Thin';
 `;
 
 const TitleContainer = styled.div`
   margin: 1.7rem 0rem;
   font-size: 3.3rem;
+  font-family: 'Pretendard-Black';
 `;
 
 const ImageContainer = styled.div`
   align-items: center;
-  height: 20rem;
   margin: 2rem 0rem;
 `;
 
 const WinnerContainer = styled.div`
-  margin: 10rem 0rem 5rem 0rem;
-  font-size: 3.3rem;
+  margin: 0rem 0rem 3rem 0rem;
+  font-size: 3rem;
 `;
 
 const ButtonsContainer = styled.div`
