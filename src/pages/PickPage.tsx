@@ -6,7 +6,12 @@ const PickPage = () => {
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
       <DirectionContainer>참여자들을 확인해 주세요</DirectionContainer>
-      <ListContainer/>
+      <ListContainer>
+        <ListUnit>엘라</ListUnit>
+        <ListUnit>클로이</ListUnit>
+        <ListUnit>슈우</ListUnit>
+        <ListUnit>뚜우</ListUnit>
+      </ListContainer>
       <ButtonsContainer>
         <StyledLink to='/complete'>
           <ConfirmButton>확인</ConfirmButton>
@@ -25,24 +30,37 @@ const Container = styled.div`
   min-height: 100vh;
   margin: 0;
   padding-top: 1rem;
+  font-family: 'Pretendard-Thin';
 `;
 
 const TitleContainer = styled.div`
   margin: 1.7rem 0rem;
   font-size: 3.3rem;
+  font-family: 'Pretendard-Black';
 `;
 
 const DirectionContainer = styled.div`
-  margin-bottom: 1.7rem;
+  margin-bottom: 0.5rem;
   font-size: 1.5rem;
 `;
 
 const ListContainer = styled.div`
-  width: 20rem;
-  height: 30rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
   margin: 2rem 0rem;
+  width: 13.2rem;
+`;
+
+const ListUnit = styled.div`
+  width: 4rem;
+  padding: 1rem;
   border: 1px solid #D9D9D9;
   border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  text-align: center;
 `;
 
 const ButtonsContainer = styled.div`
