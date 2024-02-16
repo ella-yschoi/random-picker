@@ -50,10 +50,10 @@ const DirectionContainer = styled.div`
 const ListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
-  margin: 2rem 0rem;
-  width: 13.2rem;
+  margin: 2rem auto;
+  width: 15rem;
 `;
 
 const ListUnit = styled.div`
