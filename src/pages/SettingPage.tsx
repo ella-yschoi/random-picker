@@ -2,8 +2,12 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-const WinnerPage = () => {
-  const [participants, setParticipants] = useState<string[]>([]);
+interface SettingPageProps {
+  setParticipants: React.Dispatch<React.SetStateAction<string[]>>;
+  participants: string[];
+}
+
+const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants }) => {
   const [nameInput, setNameInput] = useState('');
   const navigate = useNavigate();
 
@@ -17,12 +21,14 @@ const WinnerPage = () => {
       alert('이름을 입력해 주세요.');
       return;
     }
-    if (participants.length >= 10) {
-      alert('참여자는 10명까지만 입력할 수 있어요.');
-      return;
-    }
+    setParticipants((currentParticipants) => {
+      if (currentParticipants.length >= 10) {
+        alert('참여자는 10명까지만 입력할 수 있어요.');
+        return currentParticipants;
+      }
+      return [...currentParticipants, nameInput];
+    });
     
-    setParticipants([...participants, nameInput]);
     setNameInput(''); // 입력창 초기화
   }
 
@@ -55,7 +61,7 @@ const WinnerPage = () => {
         </InputContainer>
       </form>
       <ListContainer>
-        {participants.map((participant, index) => (
+        {participants && participants.map((participant, index) => (
           <ParticipantUnit key={index}>
             <PencilIcon>✏️</PencilIcon>
             {participant}
@@ -161,4 +167,4 @@ const InputButton = styled(ButtonStyle)``;
 const CompleteButton = styled(ButtonStyle)``;
 const ResetButton = styled(ButtonStyle)``;
 
-export default WinnerPage;
+export default SettingPage;
