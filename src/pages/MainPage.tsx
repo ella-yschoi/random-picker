@@ -1,11 +1,22 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface MainPageProps {
   participants: string[];
 }
 
 const MainPage: React.FC<MainPageProps> = ({participants}) => {
+  const navigate = useNavigate();
+
+  const handleSetting = () => {
+    if (participants.length === 0) {
+      alert('참여자를 먼저 입력해 주세요. \n참여자 설정 화면으로 이동합니다.')
+      navigate('/setting');
+      return;
+    }
+    navigate('/confirm'); // 참여자가 있으면 당첨자 뽑기 페이지로 이동
+  };
+
   return (
     <Container>
       <TitleContainer>
@@ -15,9 +26,7 @@ const MainPage: React.FC<MainPageProps> = ({participants}) => {
       <StyledLink to='/setting'>
         <SettingButton>참여자 설정</SettingButton>
       </StyledLink>
-      <StyledLink to='/confirm'>
-      <WinnerPickerButton>당첨자 뽑기</WinnerPickerButton>
-      </StyledLink>
+      <WinnerPickerButton onClick={handleSetting}>당첨자 뽑기</WinnerPickerButton>
     </ButtonsContainer>
     </Container>
   )
