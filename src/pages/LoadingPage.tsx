@@ -17,6 +17,7 @@ const LoadingPage = () => {
   return (
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
+      <DirectionContainer>당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻</DirectionContainer>
       <ImageContainer>
         <img src={LoadingImage} alt="loading.gif" />
       </ImageContainer>
@@ -40,6 +41,11 @@ const TitleContainer = styled.div`
   margin: 1.7rem 0rem;
   font-size: 3.3rem;
   font-family: 'Pretendard-Black';
+`;
+
+const DirectionContainer = styled.div`
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
 `;
 
 const ImageContainer = styled.div`
