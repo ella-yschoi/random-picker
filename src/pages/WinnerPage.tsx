@@ -2,19 +2,27 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import LoadingImage from '../assets/celebrate.gif'
 
-const SettingPage = () => {  
+interface WinnerPageProps {
+  participants: string[];
+  setParticipants: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
+  const winnerIndex = Math.floor(Math.random() * participants.length);
+  const winner = participants[winnerIndex];
+
   return (
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
       <ImageContainer>
         <img src={LoadingImage} alt="celebrate.gif" height="200" width="300" />
       </ImageContainer>
-      <WinnerContainer>엘라</WinnerContainer>
+      <WinnerContainer>{winner}</WinnerContainer>
       <ButtonsContainer>
         <StyledLink to='/'>
           <RootButton>홈으로</RootButton>
         </StyledLink>
-        <StyledLink to='/setting'>
+        <StyledLink to='/confirm'>
           <ReplyButton>다시하기</ReplyButton>
         </StyledLink>
       </ButtonsContainer>
@@ -74,4 +82,4 @@ const StyledLink = styled(Link)`
 const RootButton = styled(ButtonStyle)``;
 const ReplyButton = styled(ButtonStyle)``;
 
-export default SettingPage;
+export default WinnerPage;
