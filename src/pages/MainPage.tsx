@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-const MainPage = () => {
+interface MainPageProps {
+  participants: string[];
+}
+
+const MainPage: React.FC<MainPageProps> = ({participants}) => {
   return (
     <Container>
       <TitleContainer>
@@ -11,7 +15,7 @@ const MainPage = () => {
       <StyledLink to='/setting'>
         <SettingButton>참여자 설정</SettingButton>
       </StyledLink>
-      <StyledLink to='/pick'>
+      <StyledLink to='/confirm'>
       <WinnerPickerButton>당첨자 뽑기</WinnerPickerButton>
       </StyledLink>
     </ButtonsContainer>

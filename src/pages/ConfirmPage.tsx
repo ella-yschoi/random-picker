@@ -1,19 +1,22 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-const PickPage = () => {
+interface ConfirmPageProps {
+  participants: string[];
+}
+
+const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
   return (
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
       <DirectionContainer>참여자들을 확인해 주세요</DirectionContainer>
       <ListContainer>
-        <ListUnit>엘라</ListUnit>
-        <ListUnit>클로이</ListUnit>
-        <ListUnit>슈우</ListUnit>
-        <ListUnit>뚜우</ListUnit>
+        {participants.map((participants, index) => (
+          <ListUnit key={index}>{participants}</ListUnit>
+        ))}
       </ListContainer>
       <ButtonsContainer>
-        <StyledLink to='/complete'>
+        <StyledLink to='/loading'>
           <ConfirmButton>확인</ConfirmButton>
         </StyledLink>
       </ButtonsContainer>
@@ -86,4 +89,4 @@ const StyledLink = styled(Link)`
 
 const ConfirmButton = styled(ButtonStyle)``;
 
-export default PickPage;
+export default ConfirmPage;

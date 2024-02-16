@@ -4,14 +4,14 @@ import { useState } from 'react';
 
 import MainPage from './pages/MainPage';
 import SettingPage from './pages/SettingPage';
-import PickPage from './pages/PickPage';
+import ConfirmPage from './pages/ConfirmPage';
 import LoadingPage from './pages/LoadingPage';
 import WinnerPage from './pages/WinnerPage';
 
 export enum RoutePath {
   Root = '/',
   Setting = '/setting',
-  Pick = '/pick',
+  Confirm = '/confirm',
   Loading = '/loading',
   Winner = '/winner',
 }
@@ -24,7 +24,7 @@ const RouteProvider = () => {
       <Routes>
         <Route path={RoutePath.Root} element={<MainPage participants={participants} />} />
         <Route path={RoutePath.Setting} element={<SettingPage participants={participants} setParticipants={setParticipants} />} />
-        <Route path={RoutePath.Pick} element={<PickPage participants={participants} />} />
+        <Route path={RoutePath.Confirm} element={<ConfirmPage participants={participants} />} />
         <Route path={RoutePath.Loading} element={<LoadingPage />} />
         <Route path={RoutePath.Winner} element={<WinnerPage participants={participants} setParticipants={setParticipants} />} />
       </Routes>
