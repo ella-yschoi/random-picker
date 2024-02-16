@@ -48,7 +48,7 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
   return (
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
-      <DirectionContainer>참여자들을 입력해 주세요</DirectionContainer>
+      <DirectionContainer>참여자를 입력해 주세요</DirectionContainer>
       <form onSubmit={handleAddParticipant}>
         <InputContainer>
           <TextInput

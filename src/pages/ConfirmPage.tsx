@@ -9,7 +9,7 @@ const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
   return (
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
-      <DirectionContainer>참여자들을 확인해 주세요</DirectionContainer>
+      <DirectionContainer>참여자를 확인해 주세요</DirectionContainer>
       <ListContainer>
         {participants.map((participants, index) => (
           <ListUnit key={index}>{participants}</ListUnit>
