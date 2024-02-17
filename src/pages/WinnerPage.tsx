@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
-import LoadingImage from '../assets/celebrate.gif'
+import WinningImage from '../../public/celebrate.gif';
 
 interface WinnerPageProps {
   participants: string[];
@@ -15,7 +15,7 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
     <Container>
       <TitleContainer>🔀 랜덤 피커</TitleContainer>
       <ImageContainer>
-        <img src={LoadingImage} alt="celebrate.gif" height="200" width="300" />
+        <img src={WinningImage} alt="celebrate.gif" height="200" width="300" />
       </ImageContainer>
       <WinnerContainer>{winner}</WinnerContainer>
       <ButtonsContainer>

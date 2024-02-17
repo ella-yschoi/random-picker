@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
-import LoadingImage from '../assets/drumming.gif'
+import LoadingImage from '../../public/drumming.gif';
 
 const LoadingPage = () => { 
   const navigate = useNavigate();
