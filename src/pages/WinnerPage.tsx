@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+
 import WinningImage from '../../public/celebrate.gif';
+import Title from '../components/Title/Title';
 
 interface WinnerPageProps {
   participants: string[];
@@ -13,7 +15,7 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
 
   return (
     <Container>
-      <TitleContainer>🔀 랜덤 피커</TitleContainer>
+      <Title/>
       <ImageContainer>
         <img src={WinningImage} alt="celebrate.gif" height="200" width="300" />
       </ImageContainer>
@@ -40,12 +42,6 @@ const Container = styled.div`
   margin: 0;
   padding-top: 1rem;
   font-family: 'Pretendard-Thin';
-`;
-
-const TitleContainer = styled.div`
-  margin: 1.7rem 0rem;
-  font-size: 3.3rem;
-  font-family: 'Pretendard-Black';
 `;
 
 const ImageContainer = styled.div`

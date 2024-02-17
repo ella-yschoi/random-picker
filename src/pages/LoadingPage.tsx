@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
+
 import LoadingImage from '../../public/drumming.gif';
+import Title from '../components/Title/Title';
 
 const LoadingPage = () => { 
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ const LoadingPage = () => {
 
   return (
     <Container>
-      <TitleContainer>🔀 랜덤 피커</TitleContainer>
+      <Title/>
       <DirectionContainer>당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻</DirectionContainer>
       <ImageContainer>
         <img src={LoadingImage} alt="loading.gif" />
@@ -35,12 +37,6 @@ const Container = styled.div`
   margin: 0;
   padding-top: 1rem;
   font-family: 'Pretendard-Thin';
-`;
-
-const TitleContainer = styled.div`
-  margin: 1.7rem 0rem;
-  font-size: 3.3rem;
-  font-family: 'Pretendard-Black';
 `;
 
 const DirectionContainer = styled.div`

@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
+import Title from '../components/Title/Title';
+
 interface SettingPageProps {
   setParticipants: React.Dispatch<React.SetStateAction<string[]>>;
   participants: string[];
@@ -47,7 +49,7 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
   
   return (
     <Container>
-      <TitleContainer>🔀 랜덤 피커</TitleContainer>
+      <Title/>
       <DirectionContainer>참여자를 입력해 주세요</DirectionContainer>
       <form onSubmit={handleAddParticipant}>
         <InputContainer>
@@ -86,12 +88,6 @@ const Container = styled.div`
   margin: 0;
   padding-top: 1rem;
   font-family: 'Pretendard-Thin';
-`;
-
-const TitleContainer = styled.div`
-  margin: 1.7rem 0rem;
-  font-size: 3.3rem;
-  font-family: 'Pretendard-Black';
 `;
 
 const DirectionContainer = styled.div`

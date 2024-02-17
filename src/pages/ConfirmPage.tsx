@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
+import Title from '../components/Title/Title';
+
 interface ConfirmPageProps {
   participants: string[];
 }
@@ -8,7 +10,7 @@ interface ConfirmPageProps {
 const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
   return (
     <Container>
-      <TitleContainer>🔀 랜덤 피커</TitleContainer>
+      <Title/>
       <DirectionContainer>참여자를 확인해 주세요</DirectionContainer>
       <ListContainer>
         {participants.map((participants, index) => (
@@ -34,12 +36,6 @@ const Container = styled.div`
   margin: 0;
   padding-top: 1rem;
   font-family: 'Pretendard-Thin';
-`;
-
-const TitleContainer = styled.div`
-  margin: 1.7rem 0rem;
-  font-size: 3.3rem;
-  font-family: 'Pretendard-Black';
 `;
 
 const DirectionContainer = styled.div`

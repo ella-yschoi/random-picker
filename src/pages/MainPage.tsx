@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { Link, useNavigate } from 'react-router-dom';
 
-interface MainPageProps {
+import Title from '../components/Title/Title';
+export interface MainPageProps {
   participants: string[];
 }
 
@@ -14,14 +15,12 @@ const MainPage: React.FC<MainPageProps> = ({participants}) => {
       navigate('/setting');
       return;
     }
-    navigate('/confirm'); // 참여자가 있으면 당첨자 뽑기 페이지로 이동
+    navigate('/confirm');
   };
 
   return (
     <Container>
-      <TitleContainer>
-        🔀 랜덤 피커
-      </TitleContainer>
+      <Title/>
       <ButtonsContainer>
       <StyledLink to='/setting'>
         <SettingButton>참여자 설정</SettingButton>
@@ -42,12 +41,6 @@ const Container = styled.div`
   margin: 0;
   padding-top: 1rem;
   font-family: 'Pretendard-Thin';
-`
-
-const TitleContainer = styled.div`
-  margin: 1.7rem 0rem;
-  font-size: 3.3rem;
-  font-family: 'Pretendard-Black';
 `
 
 const ButtonsContainer = styled.div`
