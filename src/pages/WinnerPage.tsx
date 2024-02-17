@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import Container from '../components/Container/Container.style';
+import { Container, ImageContainer, ButtonsContainer } from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
 import { PrimaryButton } from '../components/Button/Button';
 import WinningImage from '../../public/celebrate.gif';
@@ -21,7 +21,7 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
         <img src={WinningImage} alt="celebrate.gif" height="200" width="300" />
       </ImageContainer>
       <WinnerContainer>{winner}</WinnerContainer>
-      <ButtonsContainer>
+      <ButtonsContainer gap="5rem">
         <PrimaryButton to='/'>홈으로</PrimaryButton>
         <PrimaryButton to='/confirm'>다시하기</PrimaryButton>
       </ButtonsContainer>
@@ -29,20 +29,9 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
   );
 };
 
-const ImageContainer = styled.div`
-  align-items: center;
-  margin: 2rem 0rem;
-`;
-
 const WinnerContainer = styled.div`
   margin: 0rem 0rem 3rem 0rem;
   font-size: 3rem;
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 5rem;
 `;
 
 export default WinnerPage;

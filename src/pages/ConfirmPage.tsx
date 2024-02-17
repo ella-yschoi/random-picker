@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import Container from '../components/Container/Container.style';
+import { Container, DirectionContainer, ButtonsContainer } from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
 import { PrimaryButton } from '../components/Button/Button';
 
@@ -18,17 +18,12 @@ const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
           <ListUnit key={index}>{participants}</ListUnit>
         ))}
       </ListContainer>
-      <ButtonsContainer>
+      <ButtonsContainer gap="9rem">
         <PrimaryButton to='/loading'>확인</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const DirectionContainer = styled.div`
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-`;
 
 const ListContainer = styled.div`
   display: flex;
@@ -47,12 +42,6 @@ const ListUnit = styled.div`
   font-size: 1.2rem;
   background-color: #ffffff;
   text-align: center;
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 9rem;
 `;
 
 export default ConfirmPage;

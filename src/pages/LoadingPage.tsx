@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import styled from '@emotion/styled';
 
-import Container from '../components/Container/Container.style';
+import { Container, DirectionContainer, ImageContainer } from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
 import LoadingImage from '../../public/drumming.gif';
 
@@ -27,16 +26,5 @@ const LoadingPage = () => {
     </Container>
   );
 };
-
-const DirectionContainer = styled.div`
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-`;
-
-const ImageContainer = styled.div`
-  align-items: center;
-  height: 20rem;
-  margin: 2rem 0rem;
-`;
 
 export default LoadingPage;

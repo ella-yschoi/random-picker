@@ -6,4 +6,4 @@ interface ButtonProps {
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-export default ButtonProps;
+export type { ButtonProps };

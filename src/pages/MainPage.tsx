@@ -1,7 +1,6 @@
-import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
-import Container from '../components/Container/Container.style';
+import { Container, ButtonsContainer } from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
 import { PrimaryButton, NavigationButton } from '../components/Button/Button';
 
@@ -24,18 +23,12 @@ const MainPage: React.FC<MainPageProps> = ({participants}) => {
   return (
     <Container>
       <Title/>
-      <ButtonsContainer>
+      <ButtonsContainer gap="1rem">
         <PrimaryButton to='/setting'>참여자 설정</PrimaryButton>
         <NavigationButton onClick={handleSetting}>당첨자 뽑기</NavigationButton>
     </ButtonsContainer>
     </Container>
   )
 }
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-`
 
 export default MainPage;

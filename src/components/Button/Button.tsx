@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import ButtonStyle from './Button.style';
-import ButtonProps from './Button.type';
+import { ButtonProps } from './Button.type';
 
 const PrimaryButton: React.FC<ButtonProps> = ({ children, to }) => {
   // 'to' prop이 제공되면 Link 컴포넌트 사용, 그렇지 않으면 div 사용

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import Container from '../components/Container/Container.style';
+import { Container, DirectionContainer, InputContainer, ButtonsContainer } from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
 import { NavigationButton, InteractionButton } from '../components/Button/Button';
 
@@ -72,24 +72,13 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
           </ParticipantUnit>
         ))}
       </ListContainer>
-      <ButtonsContainer>
+      <ButtonsContainer gap="9rem">
         <NavigationButton onClick={handleComplete}>완료</NavigationButton>
         <InteractionButton onClick={handleReset}>초기화</InteractionButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const DirectionContainer = styled.div`
-  margin-bottom: 1.7rem;
-  font-size: 1.5rem;
-`;
-
-const InputContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-`;
 
 const TextInput = styled.input`
   width: 13.5rem;
@@ -131,12 +120,6 @@ const ParticipantUnit = styled.div`
 
 const PencilIcon = styled.span`
   font-size: 1.5rem;
-`;
-
-const ButtonsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 9rem;
 `;
 
 export default SettingPage;
