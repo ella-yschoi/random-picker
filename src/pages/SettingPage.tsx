@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
+import Container from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
+import { NavigationButton, InteractionButton } from '../components/Button/Button';
 
 interface SettingPageProps {
   setParticipants: React.Dispatch<React.SetStateAction<string[]>>;
@@ -59,7 +61,7 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
             value={nameInput}
             onChange={handleInputChange}
           />
-          <InputButton onClick={handleAddParticipant}>입력</InputButton>
+          <InteractionButton onClick={handleAddParticipant}>입력</InteractionButton>
         </InputContainer>
       </form>
       <ListContainer>
@@ -71,24 +73,12 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
         ))}
       </ListContainer>
       <ButtonsContainer>
-        <CompleteButton onClick={handleComplete}>완료</CompleteButton>
-        <ResetButton onClick={handleReset}>초기화</ResetButton>
+        <NavigationButton onClick={handleComplete}>완료</NavigationButton>
+        <InteractionButton onClick={handleReset}>초기화</InteractionButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const Container = styled.div`
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 1rem;
-  font-family: 'Pretendard-Thin';
-`;
 
 const DirectionContainer = styled.div`
   margin-bottom: 1.7rem;
@@ -148,19 +138,5 @@ const ButtonsContainer = styled.div`
   justify-content: center;
   gap: 9rem;
 `;
-
-const ButtonStyle = styled.div`
-  font-size: 1.2rem;
-  padding: 1rem 1.5rem;
-  background-color: #d9d9d9;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const InputButton = styled(ButtonStyle)``;
-const CompleteButton = styled(ButtonStyle)``;
-const ResetButton = styled(ButtonStyle)``;
 
 export default SettingPage;

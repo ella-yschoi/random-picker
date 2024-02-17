@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
-import WinningImage from '../../public/celebrate.gif';
+import Container from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
+import { PrimaryButton } from '../components/Button/Button';
+import WinningImage from '../../public/celebrate.gif';
 
 interface WinnerPageProps {
   participants: string[];
@@ -21,28 +22,12 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
       </ImageContainer>
       <WinnerContainer>{winner}</WinnerContainer>
       <ButtonsContainer>
-        <StyledLink to='/'>
-          <RootButton>홈으로</RootButton>
-        </StyledLink>
-        <StyledLink to='/confirm'>
-          <ReplyButton>다시하기</ReplyButton>
-        </StyledLink>
+        <PrimaryButton to='/'>홈으로</PrimaryButton>
+        <PrimaryButton to='/confirm'>다시하기</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const Container = styled.div`
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 1rem;
-  font-family: 'Pretendard-Thin';
-`;
 
 const ImageContainer = styled.div`
   align-items: center;
@@ -59,23 +44,5 @@ const ButtonsContainer = styled.div`
   justify-content: center;
   gap: 5rem;
 `;
-
-const ButtonStyle = styled.div`
-  font-size: 1.2rem;
-  padding: 1rem 1.5rem;
-  background-color: #d9d9d9;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-`;
-
-const RootButton = styled(ButtonStyle)``;
-const ReplyButton = styled(ButtonStyle)``;
 
 export default WinnerPage;

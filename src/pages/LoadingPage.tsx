@@ -2,15 +2,16 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
 
-import LoadingImage from '../../public/drumming.gif';
+import Container from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
+import LoadingImage from '../../public/drumming.gif';
 
 const LoadingPage = () => { 
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/winner'); // 3초 후 WinnerPage로 이동
+      navigate('/winner'); // 4초 후 WinnerPage로 이동
     }, 4000);
 
     return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 클리어
@@ -26,18 +27,6 @@ const LoadingPage = () => {
     </Container>
   );
 };
-
-const Container = styled.div`
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 1rem;
-  font-family: 'Pretendard-Thin';
-`;
 
 const DirectionContainer = styled.div`
   margin-bottom: 0.5rem;

@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
 
+import Container from '../components/Container/Container.style';
 import Title from '../components/Title/Title';
+import { PrimaryButton } from '../components/Button/Button';
 
 interface ConfirmPageProps {
   participants: string[];
@@ -18,25 +19,11 @@ const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
         ))}
       </ListContainer>
       <ButtonsContainer>
-        <StyledLink to='/loading'>
-          <ConfirmButton>확인</ConfirmButton>
-        </StyledLink>
+        <PrimaryButton to='/loading'>확인</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const Container = styled.div`
-  color: #000000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 1rem;
-  font-family: 'Pretendard-Thin';
-`;
 
 const DirectionContainer = styled.div`
   margin-bottom: 0.5rem;
@@ -67,22 +54,5 @@ const ButtonsContainer = styled.div`
   justify-content: center;
   gap: 9rem;
 `;
-
-const ButtonStyle = styled.div`
-  font-size: 1.2rem;
-  padding: 1rem 1.5rem;
-  background-color: #d9d9d9;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
-`;
-
-const ConfirmButton = styled(ButtonStyle)``;
 
 export default ConfirmPage;
