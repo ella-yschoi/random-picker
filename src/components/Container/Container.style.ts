@@ -16,8 +16,8 @@ const Container = styled.div`
 `;
 
 const DirectionContainer = styled.div`
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  margin: 2rem 0rem 1rem 0rem;
+  font-size: 1.3rem;
 `;
 
 const InputContainer = styled.div`
@@ -31,10 +31,10 @@ const SettingListContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 20rem;
-  height: 24rem;
+  width: 17.5rem;
+  height: 20rem;
   margin: 2rem 0rem;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #D9D9D9;
   border-radius: 10px;
   background-color: #ffffff;
