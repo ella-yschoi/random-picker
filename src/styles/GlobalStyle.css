@@ -1,3 +1,5 @@
+@import './reset.css';
+
 @font-face {
   font-family: 'Pretendard-Thin';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff') format('woff');
@@ -20,4 +22,23 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Light mode colors */
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --button-color: #e0e0e0;
+  --border-color: #d9d9d9;
+
+  /* Dark mode colors */
+  --background-color-dark: #121212;
+  --text-color-dark: #ffffff;
+  --button-color-dark: #333333;
+  --border-color-dark: #424242;
+}
+
+body.dark-mode {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+  --button-color: var(--button-color-dark);
+  --border-color: var(--border-color-dark);
 }
