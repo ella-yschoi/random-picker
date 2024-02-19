@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ButtonStyle from './Button.style';
+import { ButtonStyle } from './Button.style';
 import { ButtonProps } from './Button.type';
 
 const PrimaryButton: React.FC<ButtonProps> = ({ children, to }) => {

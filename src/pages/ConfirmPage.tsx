@@ -1,47 +1,28 @@
-import styled from '@emotion/styled';
+import { ConfirmPageProps } from '../types/pages.type';
 
-import { Container, DirectionContainer, ButtonsContainer } from '../components/Container/Container.style';
+import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import { PrimaryButton } from '../components/Button/Button';
 
-interface ConfirmPageProps {
-  participants: string[];
-}
+import { Container, DirectionContainer, ComfirmListContainer, ButtonsContainer } from '../components/Container/Container.style';
+import { ConfirmListUnit } from '../components/Unit/unit.style';
 
 const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
   return (
     <Container>
+      <Toggle/>
       <Title/>
       <DirectionContainer>참여자를 확인해 주세요</DirectionContainer>
-      <ListContainer>
+      <ComfirmListContainer>
         {participants.map((participants, index) => (
-          <ListUnit key={index}>{participants}</ListUnit>
+          <ConfirmListUnit key={index}>{participants}</ConfirmListUnit>
         ))}
-      </ListContainer>
-      <ButtonsContainer gap="9rem">
+      </ComfirmListContainer>
+      <ButtonsContainer gap='9rem'>
         <PrimaryButton to='/loading'>확인</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem auto;
-  width: 15rem;
-`;
-
-const ListUnit = styled.div`
-  width: 4rem;
-  padding: 1rem;
-  border: 1px solid #D9D9D9;
-  border-radius: 10px;
-  font-size: 1.2rem;
-  background-color: #ffffff;
-  text-align: center;
-`;
 
 export default ConfirmPage;

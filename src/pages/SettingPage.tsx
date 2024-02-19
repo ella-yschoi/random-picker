@@ -1,17 +1,20 @@
-import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import { Container, DirectionContainer, InputContainer, ButtonsContainer } from '../components/Container/Container.style';
+import { SettingPageProps } from '../types/pages.type'
+
+import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import { NavigationButton, InteractionButton } from '../components/Button/Button';
 
-interface SettingPageProps {
-  setParticipants: React.Dispatch<React.SetStateAction<string[]>>;
-  participants: string[];
-}
+import { Container, DirectionContainer, InputContainer, SettingListContainer, ButtonsContainer } from '../components/Container/Container.style';
+import { TextInput } from '../components/Input/Input.style';
+import { SettingListUnit, PencilIcon } from '../components/Unit/unit.style';
 
-const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants }) => {
+const SettingPage: React.FC<SettingPageProps> = ({
+  setParticipants,
+  participants,
+}) => {
   const [nameInput, setNameInput] = useState('');
   const navigate = useNavigate();
 
@@ -32,9 +35,9 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
       }
       return [...currentParticipants, nameInput];
     });
-    
+
     setNameInput(''); // 입력창 초기화
-  }
+  };
 
   const handleComplete = () => {
     if (participants.length < 1) {
@@ -42,84 +45,46 @@ const SettingPage: React.FC<SettingPageProps> = ({ setParticipants, participants
       return;
     }
     alert('참여자 리스트업이 완료되었습니다.');
-    navigate('/') // 메인 페이지로 이동
+    navigate('/'); // 메인 페이지로 이동
   };
 
   const handleReset = () => {
     setParticipants([]);
   };
-  
+
   return (
     <Container>
-      <Title/>
+      <Toggle />
+      <Title />
       <DirectionContainer>참여자를 입력해 주세요</DirectionContainer>
       <form onSubmit={handleAddParticipant}>
         <InputContainer>
           <TextInput
             type='text'
-            id="name"
+            id='name'
             value={nameInput}
             onChange={handleInputChange}
           />
-          <InteractionButton onClick={handleAddParticipant}>입력</InteractionButton>
+          <InteractionButton onClick={handleAddParticipant}>
+            입력
+          </InteractionButton>
         </InputContainer>
       </form>
-      <ListContainer>
-        {participants && participants.map((participant, index) => (
-          <ParticipantUnit key={index}>
-            <PencilIcon>✏️</PencilIcon>
-            {participant}
-          </ParticipantUnit>
-        ))}
-      </ListContainer>
-      <ButtonsContainer gap="9rem">
+      <SettingListContainer>
+        {participants &&
+          participants.map((participant, index) => (
+            <SettingListUnit key={index}>
+              <PencilIcon>✏️</PencilIcon>
+              {participant}
+            </SettingListUnit>
+          ))}
+      </SettingListContainer>
+      <ButtonsContainer gap='9rem'>
         <NavigationButton onClick={handleComplete}>완료</NavigationButton>
         <InteractionButton onClick={handleReset}>초기화</InteractionButton>
       </ButtonsContainer>
     </Container>
   );
 };
-
-const TextInput = styled.input`
-  width: 13.5rem;
-  height: 3rem;
-  padding-left: 10px;
-  border: 1px solid #D9D9D9;
-  border-radius: 10px;
-  background-color: transparent;
-  box-shadow: none;
-  font-size: 1.5rem;
-  color: #333;
-  font-family: 'Pretendard-Thin';
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-const ListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 20rem;
-  height: 24rem;
-  margin: 2rem 0rem;
-  padding: 1rem;
-  border: 1px solid #D9D9D9;
-  border-radius: 10px;
-  background-color: #ffffff;
-`;
-
-const ParticipantUnit = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 0rem 0rem 0.5rem 0.5rem;
-  color: #000000;
-`;
-
-const PencilIcon = styled.span`
-  font-size: 1.5rem;
-`;
 
 export default SettingPage;

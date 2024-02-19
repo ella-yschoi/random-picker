@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
-import { Container, DirectionContainer, ImageContainer } from '../components/Container/Container.style';
+import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import LoadingImage from '../../public/drumming.gif';
 
-const LoadingPage = () => { 
+import { Container, DirectionContainer, ImageContainer } from '../components/Container/Container.style';
+
+const LoadingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,10 +20,13 @@ const LoadingPage = () => {
 
   return (
     <Container>
+      <Toggle/>
       <Title/>
-      <DirectionContainer>당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻</DirectionContainer>
+      <DirectionContainer>
+        당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻
+      </DirectionContainer>
       <ImageContainer>
-        <img src={LoadingImage} alt="loading.gif" />
+        <img src={LoadingImage} alt='loading.gif' />
       </ImageContainer>
     </Container>
   );

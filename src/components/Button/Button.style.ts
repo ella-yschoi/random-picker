@@ -8,6 +8,8 @@ const ButtonStyle = styled.div`
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  background-color: var(--button-color);
+  border: 1px solid var(--border-color);
 `;
 
-export default ButtonStyle;
+export { ButtonStyle };

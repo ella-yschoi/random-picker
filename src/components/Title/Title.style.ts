@@ -6,4 +6,4 @@ const TitleStyle = styled.div`
   font-family: 'Pretendard-Black';
 `
 
-export default TitleStyle;
+export { TitleStyle };
