@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
+
 import { StyledProps } from './Toggle.type';
+
+import darkModeIcon from '../../../public/darkMode.svg';
+import lightModeIcon from '../../../public/lightMode.svg';
 
 const ToggleWrapper = styled.div`
   position: absolute;
@@ -38,15 +42,15 @@ const Slider = styled.span<StyledProps>`
     background-color: white;
     transition: 0.4s;
     border-radius: 50%;
-    ${({ isDarkMode }) =>
-      isDarkMode
-        ? `
-      transform: translateX(26px);
-      background-image: url('/public/darkMode.svg');
-    `
-        : `
-      background-image: url('/public/lightMode.svg');
-    `}
+    ${({ isDarkMode }) => isDarkMode
+      ? `
+        transform: translateX(26px);
+        background-image: url(${darkModeIcon});
+      `
+      : `
+        background-image: url(${lightModeIcon});
+      `
+    }
   }
 `;
 
