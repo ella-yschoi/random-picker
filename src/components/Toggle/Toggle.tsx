@@ -1,17 +1,22 @@
+import { useEffect } from 'react';
+
 import { ToggleProps } from './Toggle.type';
 import { ToggleWrapper, ToggleSwitch, Slider, Input } from './Toggle.style';
 
 const Toggle: React.FC<ToggleProps> = ({ isDarkMode, setIsDarkMode }) => {
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 localStorage에서 다크모드 설정 확인
+    const savedMode = localStorage.getItem('darkMode') === 'true';
+    setIsDarkMode(savedMode);
+    document.body.classList.toggle('dark-mode', savedMode);
+  }, [setIsDarkMode]);
 
   const handleToggle = () => {
-    setIsDarkMode(!isDarkMode);
-
-    // document.body에 'dark-mode' 클래스를 토글
-    if (!isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
+    const newIsDarkMode = !isDarkMode;
+    setIsDarkMode(newIsDarkMode);
+    document.body.classList.toggle('dark-mode', newIsDarkMode);
+    // 새 설정을 localStorage에 저장
+    localStorage.setItem('darkMode', JSON.stringify(newIsDarkMode));
   };
 
   return (
