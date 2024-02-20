@@ -1,4 +1,5 @@
 @import './reset.css';
+@import 'https://cdn.jsdelivr.net/gh/toss/tossface/dist/tossface.css';
 
 @font-face {
   font-family: 'Pretendard-Thin';
@@ -15,7 +16,7 @@
 }
 
 :root {
-  font-family: 'Pretendard-Thin', 'Pretendard-Black' sans-serif;
+  font-family: 'Tossface', 'Pretendard-Thin', 'Pretendard-Black' sans-serif;
   color-scheme: light dark;
   color: #000000;
   background-color: #ffffff;
