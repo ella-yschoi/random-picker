@@ -5,6 +5,11 @@ const ToggleWrapper = styled.div`
   position: absolute;
   right: 1.5rem;
   top: 1.5rem;
+
+  @media (max-width: 768px) {
+    top: 1.8rem;
+    right: 1.5rem;
+  }
 `;
 
 const ToggleSwitch = styled.label<ToggleProps>`
