@@ -7,8 +7,8 @@ import { useTheme } from '../contexts/ThemeProvider';
 import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import { PrimaryButton, NavigationButton } from '../components/Button/Button';
-import TitleImageinDarkMode from '../../public/TitleImage-white.png';
-import TitleImageinLightMode from '../../public/TitleImage-black.png';
+import TitleImageinDarkMode from '../assets/TitleImage-white.png';
+import TitleImageinLightMode from '../assets/TitleImage-black.png';
 
 import { Container, ButtonsContainer, ImageContainer } from '../components/Container/Container.style';
 
