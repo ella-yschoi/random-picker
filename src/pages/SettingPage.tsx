@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { SettingPageProps } from '../types/pages.type'
 
+import { useTheme } from '../contexts/ThemeProvider';
 import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import { NavigationButton, InteractionButton } from '../components/Button/Button';
@@ -17,6 +18,13 @@ const SettingPage: React.FC<SettingPageProps> = ({
 }) => {
   const [nameInput, setNameInput] = useState('');
   const navigate = useNavigate();
+
+  const { isDarkMode, setIsDarkMode } = useTheme();
+
+  useEffect(() => {
+    const currentTheme = document.body.classList.contains('dark-mode') ? true : false;
+    setIsDarkMode(currentTheme);
+  }, [setIsDarkMode]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNameInput(event.target.value);
@@ -54,7 +62,10 @@ const SettingPage: React.FC<SettingPageProps> = ({
 
   return (
     <Container>
-      <Toggle />
+      <Toggle
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+      />
       <Title />
       <DirectionContainer>참여자를 입력해 주세요</DirectionContainer>
       <form onSubmit={handleAddParticipant}>

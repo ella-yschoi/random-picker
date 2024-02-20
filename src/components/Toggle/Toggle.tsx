@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { ToggleProps } from './Toggle.type';
 import { ToggleWrapper, ToggleSwitch, Slider, Input } from './Toggle.style';
 
-const Toggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+const Toggle: React.FC<ToggleProps> = ({ isDarkMode, setIsDarkMode }) => {
 
   const handleToggle = () => {
     setIsDarkMode(!isDarkMode);
@@ -17,9 +16,9 @@ const Toggle = () => {
 
   return (
     <ToggleWrapper>
-      <ToggleSwitch isDarkMode={isDarkMode}>
+      <ToggleSwitch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}>
         <Input type='checkbox' checked={isDarkMode} onChange={handleToggle} />
-        <Slider isDarkMode={isDarkMode} />
+        <Slider isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
       </ToggleSwitch>
     </ToggleWrapper>
   );

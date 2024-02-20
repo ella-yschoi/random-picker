@@ -1,8 +1,11 @@
+import { ThemeProvider } from '../src/contexts/ThemeProvider';
 import RouteProvider from './Router';
 
-function App () {
+function App() {
   return (
-    <RouteProvider/>
+    <ThemeProvider>
+      <RouteProvider/>
+    </ThemeProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { StyledProps } from './Toggle.type';
+import { ToggleProps } from './Toggle.type';
 
 import darkModeIcon from '../../../public/darkMode.svg';
 import lightModeIcon from '../../../public/lightMode.svg';
@@ -11,7 +11,7 @@ const ToggleWrapper = styled.div`
   top: 1.5rem;
 `;
 
-const ToggleSwitch = styled.label<StyledProps>`
+const ToggleSwitch = styled.label<ToggleProps>`
   position: relative;
   display: inline-block;
   width: 3.75rem;
@@ -21,7 +21,7 @@ const ToggleSwitch = styled.label<StyledProps>`
   transition: background-color 0.2s;
 `;
 
-const Slider = styled.span<StyledProps>`
+const Slider = styled.span<ToggleProps>`
   position: absolute;
   cursor: pointer;
   top: 0;

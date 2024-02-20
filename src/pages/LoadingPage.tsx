@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
+import { useTheme } from '../contexts/ThemeProvider';
 import Toggle from '../components/Toggle/Toggle';
 import Title from '../components/Title/Title';
 import LoadingImage from '../../public/drumming.gif';
@@ -9,6 +10,13 @@ import { Container, DirectionContainer, ImageContainer } from '../components/Con
 
 const LoadingPage = () => {
   const navigate = useNavigate();
+
+  const { isDarkMode, setIsDarkMode } = useTheme();
+
+  useEffect(() => {
+    const currentTheme = document.body.classList.contains('dark-mode') ? true : false;
+    setIsDarkMode(currentTheme);
+  }, [setIsDarkMode]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,7 +28,10 @@ const LoadingPage = () => {
 
   return (
     <Container>
-      <Toggle/>
+      <Toggle
+        isDarkMode={isDarkMode}
+        setIsDarkMode={setIsDarkMode}
+      />
       <Title/>
       <DirectionContainer>
         당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻
