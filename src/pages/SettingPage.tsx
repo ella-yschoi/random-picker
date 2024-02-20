@@ -36,12 +36,16 @@ const SettingPage: React.FC<SettingPageProps> = ({
       alert('이름을 입력해 주세요.');
       return;
     }
+    if (nameInput.trim().length > 6) {
+      alert('참여자 이름은 6자 이하로 입력해 주세요.');
+      return;
+    }
     setParticipants((currentParticipants) => {
       if (currentParticipants.length >= 10) {
         alert('참여자는 10명까지만 입력할 수 있어요.');
         return currentParticipants;
       }
-      return [...currentParticipants, nameInput];
+      return [...currentParticipants, nameInput.trim()];
     });
 
     setNameInput(''); // 입력창 초기화
@@ -67,7 +71,7 @@ const SettingPage: React.FC<SettingPageProps> = ({
         setIsDarkMode={setIsDarkMode}
       />
       <Title />
-      <DirectionContainer>참여자를 입력해 주세요</DirectionContainer>
+      <DirectionContainer>참여자를 입력해 주세요 (6자 이하)</DirectionContainer>
       <form onSubmit={handleAddParticipant}>
         <InputContainer>
           <TextInput
