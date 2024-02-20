@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 import { ToggleProps } from './Toggle.type';
 
-import darkModeIcon from '../../../public/darkMode.svg';
-import lightModeIcon from '../../../public/lightMode.svg';
+import darkModeIcon from '../../assets/darkMode.svg';
+import lightModeIcon from '../../assets/lightMode.svg';
 
 const ToggleWrapper = styled.div`
   position: absolute;
