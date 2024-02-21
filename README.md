@@ -8,6 +8,7 @@
 
 - 진행기간: 2024.02.12 ~ 2024.02.20
 - 레퍼런스: [random-presenter-picker](https://github.com/hustle-dev/random-presenter-picker)
+- 이슈관리: [Github Projects](https://github.com/users/ella-yschoi/projects/3)
 
 <br/>
 
