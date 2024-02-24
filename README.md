@@ -7,8 +7,10 @@
 ## 프로젝트
 
 - 진행기간: 2024.02.12 ~ 2024.02.20
-- 레퍼런스: [random-presenter-picker](https://github.com/hustle-dev/random-presenter-picker)
+- 배포링크: [🔀 Random Picker](https://random-picker-zeta.vercel.app/)
+- 회고기록: [블로그에 기록한 TIL과 회고](https://devella.oopy.io/0a26f347-3c6c-4bb6-adab-34cfa1283e9c)
 - 이슈관리: [Github Projects](https://github.com/users/ella-yschoi/projects/3)
+- 레퍼런스: [random-presenter-picker](https://github.com/hustle-dev/random-presenter-picker)
 
 <br/>
 
@@ -53,7 +55,7 @@
 - [x] 설명 문구는 `참여자를 입력해 주세요 (6자 이하)` 로 한다.
 - [x] input에 아무것도 입력하지 않고 `입력` 버튼을 누르면 → `이름을 입력해 주세요.` 알럿이 뜬다.
 - [x] input에 6자를 초과해 입력하여 `입력` 버튼을 누르면 → `참여자 이름은 6자 이하로 입력해 주세요.` 알럿이 뜬다.
-- [x] input에 아무것도 입력하지 않고 `완료` 버튼을 누르면 → `1명 이상의 참여자 이름을 입력해 주세요.` 알럿 뜬다.
+- [x] input에 아무것도 입력하지 않고 `완료` 버튼을 누르면 → `1명 이상의 참여자 이름을 입력해 주세요.` 알럿이 뜬다.
 - [x] 이름 input에 이름을 입력하면 → 참여자 리스트에 입력한 이름이 보여진다.
 - [x] 참여자는 최대 10명까지 입력할 수 있으며, 10명을 초과하면 `참여자는 10명까지만 입력할 수 있어요.` 알럿이 뜬다.
 - [x] `초기화` 버튼을 누르면 → 모든 참여자 이름이 삭제된다.
