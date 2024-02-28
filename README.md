@@ -4,17 +4,17 @@
 
 <br/>
 
-## 프로젝트
+## 👩🏻‍💻 프로젝트
 
 - 진행기간: 2024.02.12 ~ 2024.02.20
 - 배포링크: [🔀 Random Picker](https://random-picker-zeta.vercel.app/)
-- 회고기록: [블로그에 기록한 TIL과 회고](https://devella.oopy.io/0a26f347-3c6c-4bb6-adab-34cfa1283e9c)
+- 회고기록: [랜덤 추첨기 프로젝트 배움 기록](https://devella.oopy.io/0a26f347-3c6c-4bb6-adab-34cfa1283e9c)
 - 이슈관리: [Github Projects](https://github.com/users/ella-yschoi/projects/3)
 - 레퍼런스: [random-presenter-picker](https://github.com/hustle-dev/random-presenter-picker)
 
 <br/>
 
-## 완성 화면
+## 🖼️ 완성 화면
 
 ### 라이트 모드
 
@@ -28,7 +28,7 @@
 
 ## 🛠️ 기술 스택
 
-- 개발 언어: `TypeScript`  `React`
+- 개발 언어: `TypeScript` `React`
 - 스타일: `emotion`
 - 빌드: `vite`
 - 배포: `vercel`
