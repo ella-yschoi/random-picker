@@ -12,7 +12,7 @@ import {
   ComfirmListContainer,
   ButtonsContainer,
 } from '../components/container/Container.style';
-import { ConfirmListUnit } from '../components/unit/unit.style';
+import { ConfirmListUnit } from '../components/unit/Units.style';
 
 const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
   const { isDarkMode, setIsDarkMode } = useTheme();

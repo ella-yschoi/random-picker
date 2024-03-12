@@ -19,7 +19,7 @@ import {
   ButtonsContainer,
 } from '../components/container/Container.style';
 import { TextInput } from '../components/input/Input.style';
-import { SettingListUnit, PencilIcon } from '../components/unit/unit.style';
+import { SettingListUnit, PencilIcon } from '../components/unit/Units.style';
 
 const SettingPage: React.FC<SettingPageProps> = ({
   setParticipants,
