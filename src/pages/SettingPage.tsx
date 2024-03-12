@@ -1,16 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import { SettingPageProps } from '../types/pages.type'
+import { SettingPageProps } from '../types/pages.type';
 
 import { useTheme } from '../contexts/ThemeProvider';
-import Toggle from '../components/Toggle/Toggle';
-import Title from '../components/Title/Title';
-import { NavigationButton, InteractionButton } from '../components/Button/Button';
+import Toggle from '../components/toggle/Toggle';
+import Title from '../components/title/Title';
+import {
+  NavigationButton,
+  InteractionButton,
+} from '../components/button/Button';
 
-import { Container, DirectionContainer, InputContainer, SettingListContainer, ButtonsContainer } from '../components/Container/Container.style';
-import { TextInput } from '../components/Input/Input.style';
-import { SettingListUnit, PencilIcon } from '../components/Unit/unit.style';
+import {
+  Container,
+  DirectionContainer,
+  InputContainer,
+  SettingListContainer,
+  ButtonsContainer,
+} from '../components/container/Container.style';
+import { TextInput } from '../components/input/Input.style';
+import { SettingListUnit, PencilIcon } from '../components/unit/unit.style';
 
 const SettingPage: React.FC<SettingPageProps> = ({
   setParticipants,
@@ -22,7 +31,9 @@ const SettingPage: React.FC<SettingPageProps> = ({
   const { isDarkMode, setIsDarkMode } = useTheme();
 
   useEffect(() => {
-    const currentTheme = document.body.classList.contains('dark-mode') ? true : false;
+    const currentTheme = document.body.classList.contains('dark-mode')
+      ? true
+      : false;
     setIsDarkMode(currentTheme);
   }, [setIsDarkMode]);
 
@@ -32,7 +43,8 @@ const SettingPage: React.FC<SettingPageProps> = ({
 
   const handleAddParticipant = (event: React.FormEvent) => {
     event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
-    if (!nameInput.trim()) { // 입력 값의 앞뒤 공백을 제거한 후 검사
+    if (!nameInput.trim()) {
+      // 입력 값의 앞뒤 공백을 제거한 후 검사
       alert('이름을 입력해 주세요.');
       return;
     }
@@ -66,10 +78,7 @@ const SettingPage: React.FC<SettingPageProps> = ({
 
   return (
     <Container>
-      <Toggle
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-      />
+      <Toggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Title />
       <DirectionContainer>참여자를 입력해 주세요 (6자 이하)</DirectionContainer>
       <form onSubmit={handleAddParticipant}>
