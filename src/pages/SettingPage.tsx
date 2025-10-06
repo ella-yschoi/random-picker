@@ -42,34 +42,33 @@ const SettingPage: React.FC<SettingPageProps> = ({
   };
 
   const handleAddParticipant = (event: React.FormEvent) => {
-    event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
+    event.preventDefault();
     if (!nameInput.trim()) {
-      // 입력 값의 앞뒤 공백을 제거한 후 검사
-      alert('이름을 입력해 주세요.');
+      alert('Please enter a name.');
       return;
     }
     if (nameInput.trim().length > 6) {
-      alert('참여자 이름은 6자 이하로 입력해 주세요.');
+      alert('Participant name must be 6 characters or fewer.');
       return;
     }
     setParticipants((currentParticipants) => {
       if (currentParticipants.length >= 10) {
-        alert('참여자는 10명까지만 입력할 수 있어요.');
+        alert('You can enter up to 10 participants.');
         return currentParticipants;
       }
       return [...currentParticipants, nameInput.trim()];
     });
 
-    setNameInput(''); // 입력창 초기화
+    setNameInput('');
   };
 
   const handleComplete = () => {
     if (participants.length < 1) {
-      alert('1명 이상의 참여자 이름을 입력해 주세요.');
+      alert('Please enter at least one participant.');
       return;
     }
-    alert('참여자 리스트업이 완료되었습니다.');
-    navigate('/'); // 메인 페이지로 이동
+    alert('Participant list setup is complete.');
+    navigate('/');
   };
 
   const handleReset = () => {
@@ -80,7 +79,9 @@ const SettingPage: React.FC<SettingPageProps> = ({
     <Container>
       <Toggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Title />
-      <DirectionContainer>참여자를 입력해 주세요 (6자 이하)</DirectionContainer>
+      <DirectionContainer>
+        Please enter participants (up to 6 characters)
+      </DirectionContainer>
       <form onSubmit={handleAddParticipant}>
         <InputContainer>
           <TextInput
@@ -90,7 +91,7 @@ const SettingPage: React.FC<SettingPageProps> = ({
             onChange={handleInputChange}
           />
           <InteractionButton onClick={handleAddParticipant}>
-            입력
+            Add
           </InteractionButton>
         </InputContainer>
       </form>
@@ -104,8 +105,8 @@ const SettingPage: React.FC<SettingPageProps> = ({
           ))}
       </SettingListContainer>
       <ButtonsContainer gap='9rem'>
-        <NavigationButton onClick={handleComplete}>완료</NavigationButton>
-        <InteractionButton onClick={handleReset}>초기화</InteractionButton>
+        <NavigationButton onClick={handleComplete}>Done</NavigationButton>
+        <InteractionButton onClick={handleReset}>Reset</InteractionButton>
       </ButtonsContainer>
     </Container>
   );

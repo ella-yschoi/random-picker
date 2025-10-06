@@ -6,7 +6,7 @@ import { ButtonStyle } from './Button.style';
 import { ButtonProps } from './Button.type';
 
 const PrimaryButton: React.FC<ButtonProps> = ({ children, to }) => {
-  // 'to' prop이 제공되면 Link 컴포넌트 사용, 그렇지 않으면 div 사용
+  // Use Link component when 'to' prop is provided; otherwise, render a div
   return to ? (
     <StyledLink to={to}>
       <ButtonStyle>{children}</ButtonStyle>
@@ -17,15 +17,11 @@ const PrimaryButton: React.FC<ButtonProps> = ({ children, to }) => {
 };
 
 const NavigationButton: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return (
-    <ButtonStyle onClick={onClick}>{children}</ButtonStyle>
-  );
+  return <ButtonStyle onClick={onClick}>{children}</ButtonStyle>;
 };
 
 const InteractionButton: React.FC<ButtonProps> = ({ children, onClick }) => {
-  return (
-    <ButtonStyle onClick={onClick}>{children}</ButtonStyle>
-  );
+  return <ButtonStyle onClick={onClick}>{children}</ButtonStyle>;
 };
 
 const StyledLink = styled(Link)`

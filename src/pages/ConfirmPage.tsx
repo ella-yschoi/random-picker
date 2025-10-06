@@ -28,14 +28,14 @@ const ConfirmPage: React.FC<ConfirmPageProps> = ({ participants }) => {
     <Container>
       <Toggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Title />
-      <DirectionContainer>참여자를 확인해 주세요</DirectionContainer>
+      <DirectionContainer>Please review the participants</DirectionContainer>
       <ComfirmListContainer>
         {participants.map((participants, index) => (
           <ConfirmListUnit key={index}>{participants}</ConfirmListUnit>
         ))}
       </ComfirmListContainer>
       <ButtonsContainer gap='9rem'>
-        <PrimaryButton to='/loading'>확인</PrimaryButton>
+        <PrimaryButton to='/loading'>Confirm</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );

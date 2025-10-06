@@ -5,10 +5,8 @@ const Title = () => {
   const navigate = useNavigate();
 
   return (
-    <TitleStyle onClick={() => navigate('/')}>
-      🔀 랜덤 피커
-    </TitleStyle>
+    <TitleStyle onClick={() => navigate('/')}>🔀 Random Picker</TitleStyle>
   );
-}
+};
 
 export default Title;

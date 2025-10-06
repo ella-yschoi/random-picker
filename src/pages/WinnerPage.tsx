@@ -36,8 +36,8 @@ const WinnerPage: React.FC<WinnerPageProps> = ({ participants }) => {
       </ImageContainer>
       <WinnerContainer>{winner}</WinnerContainer>
       <ButtonsContainer gap='5rem'>
-        <PrimaryButton to='/'>홈으로</PrimaryButton>
-        <PrimaryButton to='/confirm'>다시하기</PrimaryButton>
+        <PrimaryButton to='/'>Home</PrimaryButton>
+        <PrimaryButton to='/confirm'>Try Again</PrimaryButton>
       </ButtonsContainer>
     </Container>
   );

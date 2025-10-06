@@ -26,10 +26,10 @@ const LoadingPage = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/winner'); // 4초 후 WinnerPage로 이동
+      navigate('/winner');
     }, 4000);
 
-    return () => clearTimeout(timer); // 컴포넌트 언마운트 시 타이머 클리어
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
@@ -37,7 +37,7 @@ const LoadingPage = () => {
       <Toggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <Title />
       <DirectionContainer>
-        당첨자 뽑는 중.. 잠시만 기다려주세요 🙏🏻
+        Selecting a winner... Please wait a moment 🙏🏻
       </DirectionContainer>
       <ImageContainer>
         <img src={LoadingImage} alt='Loading Image' />

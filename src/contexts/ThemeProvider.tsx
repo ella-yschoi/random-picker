@@ -1,21 +1,21 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-// 컨텍스트에 대한 타입 정의
+// Type definitions for theme context
 type ThemeContextType = {
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-// createContext의 초기값 지정
+// Default values for createContext
 const ThemeContext = createContext<ThemeContextType>({
   isDarkMode: false,
   setIsDarkMode: () => {},
 });
 
-// 훅 사용을 위한 커스텀 훅
+// Custom hook for using the theme context
 const useTheme = () => useContext(ThemeContext);
 
-// ThemeProvider 컴포넌트
+// ThemeProvider component
 type ThemeProviderProps = {
   children: ReactNode;
 };

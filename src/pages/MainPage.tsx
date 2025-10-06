@@ -29,7 +29,9 @@ const MainPage: React.FC<MainPageProps> = ({ participants }) => {
 
   const handleSetting = () => {
     if (participants.length === 0) {
-      alert('참여자를 먼저 입력해 주세요. \n참여자 설정 화면으로 이동합니다.');
+      alert(
+        'Please add participants first.\nNavigating to Participant Settings.'
+      );
       navigate('/setting');
       return;
     }
@@ -56,8 +58,10 @@ const MainPage: React.FC<MainPageProps> = ({ participants }) => {
         )}
       </ImageContainer>
       <ButtonsContainer gap='1rem'>
-        <PrimaryButton to='/setting'>참여자 설정</PrimaryButton>
-        <NavigationButton onClick={handleSetting}>당첨자 뽑기</NavigationButton>
+        <PrimaryButton to='/setting'>Participant Settings</PrimaryButton>
+        <NavigationButton onClick={handleSetting}>
+          Pick a Winner
+        </NavigationButton>
       </ButtonsContainer>
     </Container>
   );
